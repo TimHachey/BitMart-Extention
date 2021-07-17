@@ -1,15 +1,20 @@
 {
 
     "manifest_version": 2,
-    "name": "BitMart order-window hider",
-    "version": "0.1",
+    "name": "BitMart/Kucoin order-window hider",
+    "version": "0.2",
   
-    "description": "Adds buttons to the chart screen on www.bitmart.com that allows users to hide/show the order-history and buy/sell windows",
+    "description": "Adds buttons to the chart screens on BitMart and KuCoin that allows the user to hide/show the lower panel used for order-history and trading",
   
     "content_scripts": [
       {
         "matches": ["https://www.bitmart.com/trade/*"],
         "js": ["bitMartScript.js"]
+      },
+      {
+        "matches": ["https://*.kucoin.com/*"],
+        "js": ["kuCoinScript.js"],
+        "run_at": "document_idle"
       }
     ]
   
